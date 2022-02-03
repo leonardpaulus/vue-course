@@ -1,6 +1,6 @@
 var app = new Vue({
-  el: "#user-goal",
+  el: "#events",
   data: {
-    courseGoal: "Finish the course and learn Vue! :)",
+    counter: 0,
   },
 });
