@@ -1,18 +1,15 @@
 var app = new Vue({
   el: "#user-goal",
   data: {
-    courseGoalA: "<h2>Finish the course and learn Vue! :)</h2>",
-    courseGoalB: "<h2>Master Vue and build amazing apps!</h2>",
-    vueLink: "https://vuejs.org/",
+    enteredGoalValue: "",
+    goals: [],
   },
   methods: {
-    outputGoal() {
-      const randomNumber = Math.random();
-      if (randomNumber < 0.5) {
-        return this.courseGoalA;
-      } else {
-        return this.courseGoalB;
-      }
+    addGoal() {
+      this.goals.push(this.enteredGoalValue);
+    },
+    removeGoal(index) {
+      this.goals.splice(index, 1);
     },
   },
 });
