@@ -3,7 +3,8 @@ var app = new Vue({
   data: {
     counter: 0,
     name: "",
-    confirmedName: "",
+    lastName: "",
+    // fullname: "",
   },
   methods: {
     add(num) {
@@ -12,14 +13,47 @@ var app = new Vue({
     reduce(num) {
       this.counter = this.counter - num;
     },
-    setName(event, lastName) {
-      this.name = event.target.value + " " + lastName;
+    setName(event) {
+      this.name = event.target.value;
     },
     submitForm() {
       alert("Form has been submitted");
     },
     confirmName() {
       this.confirmedName = this.name;
+    },
+    resetInput() {
+      this.name = "";
+      this.lastName = "";
+    },
+  },
+  watch: {
+    counter(value) {
+      if (value > 50) {
+        this.counter = 0;
+      }
+    },
+    //     name(value) {
+    //       if (value === "") {
+    //         this.fullname = "";
+    //       } else {
+    //         this.fullname = value + " " + this.lastName;
+    //       }
+    //     },
+    //     lastName(value) {
+    //       if (value === "") {
+    //         this.fullname = "";
+    //       } else {
+    //         this.fullname = this.name + " " + value;
+    //       }
+    //     },
+  },
+  computed: {
+    fullname() {
+      if (this.name === "" || this.lastName === "") {
+        return "";
+      }
+      return this.name + " " + this.lastName;
     },
   },
 });
