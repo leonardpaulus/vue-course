@@ -1,3 +1,22 @@
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  display: grid;
+  place-items: center;
+}
+
+.demo {
+  height: 5rem;
+  width: 10rem;
+  border-color: grey;
+  border: 2px dashed;
+  margin: 1rem;
+}
+
+.active {
+  border-color: red;
+  background-color: salmon;
+}
+
+.hover {
+  opacity: 0.3;
 }
